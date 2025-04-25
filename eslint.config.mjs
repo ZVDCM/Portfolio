@@ -1,21 +1,18 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import checkFile from 'eslint-plugin-check-file';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
+    baseDirectory: import.meta.dirname,
 });
 
 /**
  * @type {import("eslint").Linter.Config}
  */
 const eslintConfig = [
+    {
+        ignores: ['**/node_modules/**', '**/.next/**'],
+    },
     ...compat.extends('next', 'next/core-web-vitals', 'next/typescript'),
     eslintConfigPrettier,
     {
