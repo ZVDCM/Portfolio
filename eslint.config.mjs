@@ -12,6 +12,9 @@ const compat = new FlatCompat({
     baseDirectory: __dirname,
 });
 
+/**
+ * @type {import("eslint").Linter.Config}
+ */
 const eslintConfig = [
     ...compat.extends('next', 'next/core-web-vitals', 'next/typescript'),
     eslintConfigPrettier,
@@ -71,6 +74,43 @@ const eslintConfig = [
                             from: ['./src/features', './src/app'],
                         },
                     ],
+                },
+            ],
+            '@typescript-eslint/naming-convention': [
+                'error',
+                {
+                    selector: 'interface',
+                    format: ['PascalCase'],
+                    custom: {
+                        regex: '^I[A-Z]',
+                        match: true,
+                    },
+                },
+                {
+                    selector: 'typeAlias',
+                    format: ['PascalCase'],
+                    custom: {
+                        regex: '^T[A-Z]',
+                        match: true,
+                    },
+                },
+                {
+                    selector: 'typeParameter',
+                    format: ['PascalCase'],
+                    custom: {
+                        regex: '^T[A-Z]',
+                        match: true,
+                    },
+                },
+                {
+                    selector: 'memberLike',
+                    modifiers: ['private'],
+                    format: ['camelCase'],
+                    leadingUnderscore: 'require',
+                },
+                {
+                    selector: 'class',
+                    format: ['PascalCase'],
                 },
             ],
         },
