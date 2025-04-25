@@ -5,6 +5,8 @@ const buildEslintCommand = (filenames) =>
 
 const config = {
     '*.{js,jsx,mjs,ts,tsx}': ['prettier --write', buildEslintCommand],
+    '*.{css,scss,less}': ['stylelint --fix', 'prettier --write'],
+    '*.{html,json,md,yaml,yml}': ['prettier --write'],
 };
 
 export default config;
