@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default function RootLayout({
-    children,
-}: Readonly<{
+interface IRootLayoutProps {
     children: React.ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: Readonly<IRootLayoutProps>) {
     return (
         <html lang="en">
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
