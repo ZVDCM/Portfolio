@@ -67,6 +67,7 @@ const eslintConfig = [
                                 './src/lib',
                                 './src/types',
                                 './src/utils',
+                                './src/config',
                             ],
                             from: ['./src/features', './src/app'],
                         },
