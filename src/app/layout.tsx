@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import localFont from 'next/font/local';
+
+import Footer from '@/components/layouts/footer';
+import Nav from '@/components/layouts/nav';
+import SectionsContextProvider from '@/components/providers/sections-context';
+
 import './globals.css';
 
 const roboto = Roboto({
@@ -20,15 +25,15 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-interface IRootLayoutProps {
-    children: React.ReactNode;
-}
-
-export default function RootLayout({ children }: Readonly<IRootLayoutProps>) {
+export default function RootLayout({ children }: React.PropsWithChildren) {
     return (
         <html lang="en">
             <body className={`${roboto.variable} ${cascadia.variable} antialiased`}>
-                {children}
+                <SectionsContextProvider>
+                    <Nav />
+                    <main>{children}</main>
+                    <Footer />
+                </SectionsContextProvider>
             </body>
         </html>
     );
