@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 import Footer from '@/components/layouts/footer';
 import Nav from '@/components/layouts/nav';
 import SectionsContextProvider from '@/components/providers/sections-context';
+import ContactMe from '@/features/contact-me/components/contact-me';
 
 import './globals.css';
 
@@ -32,7 +33,9 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
                 <SectionsContextProvider>
                     <Nav />
                     <main>{children}</main>
-                    <Footer />
+                    <Footer>
+                        <ContactMe />
+                    </Footer>
                 </SectionsContextProvider>
             </body>
         </html>

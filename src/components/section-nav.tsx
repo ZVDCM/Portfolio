@@ -32,15 +32,11 @@ export default function SectionNav() {
     return (
         <aside className="sticky bottom-10 z-10 -mt-9 mb-4 px-4">
             <nav role="navigation">
-                <ToggleGroup
-                    type="single"
-                    className="max-w-fit"
-                    value={active}
-                    onValueChange={setActive}
-                >
+                <ToggleGroup type="single" className="max-w-fit">
                     {sectionIds.map((id) => (
                         <ToggleGroupItem key={id} value={id} asChild>
                             <Link
+                                data-state={active === id ? 'on' : 'off'}
                                 href={`#${id}`}
                                 className="min-w-auto px-4 font-mono text-xs font-light"
                             >

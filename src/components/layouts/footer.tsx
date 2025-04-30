@@ -4,7 +4,10 @@ import Link from 'next/link';
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
-import { SectionsContext } from '../providers/sections-context';
+import { SectionsContext } from '@/components/providers/sections-context';
+import { THEME } from '@/config/theme';
+import useTheme from '@/hooks/use-theme';
+import { cn } from '@/lib/utils/cn';
 
 interface ISocials {
     icon: React.ReactNode;
@@ -22,13 +25,15 @@ const SOCIALS: ISocials[] = [
     },
 ];
 
-export default function Footer() {
+export default function Footer({ children }: React.PropsWithChildren) {
+    const theme = useTheme();
+
     const { sectionIds } = React.useContext(SectionsContext);
 
     return (
         <footer className="border-t">
-            <div className="container flex h-80 gap-4 px-0">
-                <div className="flex flex-1 flex-col gap-4 p-8">
+            <div className="container flex gap-4 px-0">
+                <div className="flex flex-1 flex-col gap-8 p-8">
                     <Link href="/" className="w-fit font-mono text-3xl font-bold">
                         ZVM
                     </Link>
@@ -61,7 +66,14 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="flex basis-2/5 flex-col bg-black dark:bg-white"></div>
+                <div
+                    className={cn(
+                        'bg-background basis-2/5',
+                        theme === THEME.DARK ? THEME.LIGHT : THEME.DARK,
+                    )}
+                >
+                    {children}
+                </div>
             </div>
         </footer>
     );
