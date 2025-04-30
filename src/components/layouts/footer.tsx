@@ -29,7 +29,7 @@ export default function Footer() {
         <footer className="border-t">
             <div className="container flex h-80 gap-4 px-0">
                 <div className="flex flex-1 flex-col gap-4 p-8">
-                    <Link href="/" className="font-mono text-3xl font-bold">
+                    <Link href="/" className="w-fit font-mono text-3xl font-bold">
                         ZVM
                     </Link>
                     <div className="flex flex-1">
