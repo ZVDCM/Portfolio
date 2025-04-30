@@ -38,7 +38,7 @@ export default function Footer({ children }: React.PropsWithChildren) {
                         ZVM
                     </Link>
                     <div className="flex">
-                        <div className="flex basis-full flex-col items-start gap-4">
+                        <div className="flex basis-full flex-col items-start gap-8">
                             <p className="w-[50ch] text-sm">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex
                                 exercitationem ut optio illum eos doloremque vitae id minus non
