@@ -9,7 +9,7 @@ import { SectionsContext } from './providers/sections-context';
 
 export default function SectionNav() {
     const { sectionRefs, sectionIds } = React.useContext(SectionsContext);
-    const [active, setActive] = React.useState<string>(sectionIds[0] ?? '');
+    const [active, setActive] = React.useState<string | undefined>(sectionIds[0]);
 
     React.useEffect(() => {
         const observer = new IntersectionObserver(
