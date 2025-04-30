@@ -61,15 +61,19 @@ const eslintConfig = [
                             from: './src/app',
                         },
                         {
-                            target: [
+                            target: ['./src/components', './src/hooks', './src/lib', './src/types'],
+                            from: ['./src/features', './src/app'],
+                        },
+                        {
+                            target: './src/config',
+                            from: [
+                                './src/app',
+                                './src/features',
                                 './src/components',
                                 './src/hooks',
                                 './src/lib',
                                 './src/types',
-                                './src/utils',
-                                './src/config',
                             ],
-                            from: ['./src/features', './src/app'],
                         },
                     ],
                 },
