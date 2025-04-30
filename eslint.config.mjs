@@ -11,11 +11,19 @@ const compat = new FlatCompat({
  */
 const eslintConfig = [
     {
-        ignores: ['**/node_modules/**', '**/.next/**'],
+        ignores: [
+            '**/node_modules/**',
+            '**/.next/**',
+            '**/*.css',
+            '**/*.jpg',
+            '**/*.ico',
+            '**/*.ttf',
+        ],
     },
     ...compat.extends('next', 'next/core-web-vitals', 'next/typescript'),
     eslintConfigPrettier,
     {
+        files: ['**/*.mjs', '**/*.ts', '**/*.tsx'],
         rules: {
             'no-console': ['error', { allow: ['warn', 'error'] }],
             'sort-imports': [
@@ -38,6 +46,14 @@ const eslintConfig = [
                         'index',
                         'object',
                     ],
+                    pathGroups: [
+                        {
+                            pattern: '@/**',
+                            group: 'internal',
+                            position: 'before',
+                        },
+                    ],
+                    pathGroupsExcludedImportTypes: ['builtin'],
                     'newlines-between': 'always',
                     alphabetize: { order: 'asc', caseInsensitive: true },
                 },
@@ -47,14 +63,9 @@ const eslintConfig = [
                 {
                     zones: [
                         {
-                            target: './src/features/feature-one',
+                            target: './src/features/contact-me',
                             from: './src/features',
-                            except: ['./feature-one'],
-                        },
-                        {
-                            target: './src/features/feature-two',
-                            from: './src/features',
-                            except: ['./feature-two'],
+                            except: ['./contact-me'],
                         },
                         {
                             target: './src/features',
@@ -66,14 +77,8 @@ const eslintConfig = [
                         },
                         {
                             target: './src/config',
-                            from: [
-                                './src/app',
-                                './src/features',
-                                './src/components',
-                                './src/hooks',
-                                './src/lib',
-                                './src/types',
-                            ],
+                            from: './src',
+                            except: ['./config'],
                         },
                     ],
                 },
