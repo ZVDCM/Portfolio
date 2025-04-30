@@ -5,8 +5,9 @@ import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 import { SectionsContext } from '@/components/providers/sections-context';
+import { ThemeContext } from '@/components/providers/theme-context-provider';
+import ThemeToggle from '@/components/theme-toggle';
 import { THEME } from '@/config/theme';
-import useTheme from '@/hooks/use-theme';
 import { cn } from '@/lib/utils/cn';
 
 interface ISocials {
@@ -26,8 +27,7 @@ const SOCIALS: ISocials[] = [
 ];
 
 export default function Footer({ children }: React.PropsWithChildren) {
-    const theme = useTheme();
-
+    const { theme } = React.useContext(ThemeContext);
     const { sectionIds } = React.useContext(SectionsContext);
 
     return (
@@ -37,7 +37,7 @@ export default function Footer({ children }: React.PropsWithChildren) {
                     <Link href="/" className="w-fit font-mono text-3xl font-bold">
                         ZVM
                     </Link>
-                    <div className="flex flex-1">
+                    <div className="flex">
                         <div className="flex basis-full flex-col items-start gap-4">
                             <p className="w-[50ch] text-sm">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex
@@ -65,6 +65,8 @@ export default function Footer({ children }: React.PropsWithChildren) {
                             ))}
                         </div>
                     </div>
+
+                    <ThemeToggle className="mt-auto" />
                 </div>
                 <div
                     className={cn(

@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 import Footer from '@/components/layouts/footer';
 import Nav from '@/components/layouts/nav';
 import SectionsContextProvider from '@/components/providers/sections-context';
+import ThemeContextProvider from '@/components/providers/theme-context-provider';
 import ContactMe from '@/features/contact-me/components/contact-me';
 
 import './globals.css';
@@ -30,13 +31,15 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
     return (
         <html lang="en">
             <body className={`${roboto.variable} ${cascadia.variable} antialiased`}>
-                <SectionsContextProvider>
-                    <Nav />
-                    <main>{children}</main>
-                    <Footer>
-                        <ContactMe />
-                    </Footer>
-                </SectionsContextProvider>
+                <ThemeContextProvider>
+                    <SectionsContextProvider>
+                        <Nav />
+                        <main>{children}</main>
+                        <Footer>
+                            <ContactMe />
+                        </Footer>
+                    </SectionsContextProvider>
+                </ThemeContextProvider>
             </body>
         </html>
     );
