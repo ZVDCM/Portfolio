@@ -1,13 +1,11 @@
 'use client';
 
-import { Download } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 
 import me from '@/assets/images/me.jpg';
-import ProfessionalGoal from '@/components/professional-goal';
+import DownloadResume from '@/components/download-resume';
 import Socials from '@/components/socials';
-import { Button } from '@/components/ui/button';
 
 export default function AboutMe() {
     return (
@@ -29,11 +27,13 @@ export default function AboutMe() {
                         </h1>
                         <p className="font-mono text-xl">Full-stack Developer</p>
                     </div>
-                    <ProfessionalGoal className="w-[60ch]" />
+                    <p className="w-[60ch] text-sm">
+                        I build cross-platform apps that blend design and technology. My mission is
+                        to deliver beautiful, high-performance solutions by combining full-stack
+                        development, artistic vision, and DevOps expertise
+                    </p>
                     <div className="flex items-center gap-4">
-                        <Button variant="outline" className="w-fit">
-                            <Download /> Download Resume
-                        </Button>
+                        <DownloadResume />
                         <Socials />
                     </div>
                 </div>

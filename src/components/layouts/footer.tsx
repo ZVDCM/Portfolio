@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-import ProfessionalGoal from '@/components/professional-goal';
+import DownloadResume from '@/components/download-resume';
 import { SectionsContext } from '@/components/providers/sections-context';
 import { ThemeContext } from '@/components/providers/theme-context-provider';
 import Socials from '@/components/socials';
@@ -24,8 +24,15 @@ export default function Footer({ children }: React.PropsWithChildren) {
                     </Link>
                     <div className="flex">
                         <div className="flex flex-1 flex-col items-start gap-8">
-                            <ProfessionalGoal className="w-[50ch]" />
-                            <Socials />
+                            <p className="w-[50ch] text-sm">
+                                To shape a future where art and technology merge seamlessly—creating
+                                scalable, cross-platform solutions that are both visually compelling
+                                and crafted with creativity and precision
+                            </p>
+                            <div className="flex items-center gap-4">
+                                <DownloadResume />
+                                <Socials />
+                            </div>
                         </div>
                         <div className="flex flex-1 justify-center">
                             <div className="flex flex-col gap-2">
