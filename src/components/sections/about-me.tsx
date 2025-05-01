@@ -7,10 +7,14 @@ import me from '@/assets/images/me.jpg';
 import DownloadResume from '@/components/download-resume';
 import Socials from '@/components/socials';
 
-export default function AboutMe() {
+interface IAboutMeProps {
+    id: string;
+}
+
+export default function AboutMe({ id }: IAboutMeProps) {
     return (
         <>
-            <h2 className="sr-only">About Me</h2>
+            <h2 className="sr-only">{id}</h2>
             <div className="container flex h-screen px-0">
                 <figure className="flex-1">
                     <Image
@@ -24,9 +28,7 @@ export default function AboutMe() {
                 <div className="relative flex flex-1 flex-col justify-center">
                     <article className="flex flex-col gap-8 pl-16">
                         <div className="flex flex-col gap-2">
-                            <h1 className="text-foreground font-mono text-4xl font-bold">
-                                Zehrei Verj Morales
-                            </h1>
+                            <h1 className="font-mono text-4xl font-bold">Zehrei Verj Morales</h1>
                             <p className="font-mono text-xl">Full-stack Developer</p>
                         </div>
                         <p className="w-[60ch] text-sm">

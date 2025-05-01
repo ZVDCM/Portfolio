@@ -30,7 +30,7 @@ export default function SectionNav() {
     }, [sectionRefs]);
 
     return (
-        <aside className="sticky bottom-10 z-10 -mt-9 mb-4 w-min px-4">
+        <aside className="sticky bottom-10 z-10 -mt-12 mb-4 w-min px-4">
             <nav role="navigation" className="bg-muted flex justify-around">
                 {sectionIds.map((id) => (
                     <Link passHref replace key={id} href={`#${id}`}>

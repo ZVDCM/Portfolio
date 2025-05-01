@@ -31,7 +31,6 @@ export default function Sections({ children }: React.PropsWithChildren) {
                 }}
                 id={childId}
                 key={childId}
-                className="h-screen w-full"
             >
                 <Link href={`#${childId}`} className="pointer-events-none sr-only" tabIndex={-1} />
                 {child}
