@@ -14,7 +14,7 @@ export default function Employment({ id }: IEmploymentProps) {
     return (
         <>
             <h2 className="sr-only">{id}</h2>
-            <div className="container flex h-screen px-0">
+            <div className="container flex h-screen border-b border-dashed px-0">
                 <figure className="flex-1">
                     <Image
                         src={fshqParty}
@@ -47,8 +47,8 @@ export default function Employment({ id }: IEmploymentProps) {
                         className="size-full object-cover"
                     />
                 </figure>
-                <div className="flex flex-1 flex-col justify-center">
-                    <article className="flex flex-col gap-8 pl-16">
+                <div className="flex flex-1 items-center">
+                    <article className="pl-16">
                         <h1 className="font-mono text-4xl font-bold">Employee of the year!</h1>
                     </article>
                 </div>

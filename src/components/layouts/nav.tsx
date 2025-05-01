@@ -8,7 +8,7 @@ import ThemeToggle from '@/components/theme-toggle';
 export default function Nav() {
     return (
         <header className="fixed top-0 z-50 w-full">
-            <div className="container flex h-16 items-center justify-between gap-4">
+            <div className="container flex h-16 items-center justify-between gap-4 pr-8">
                 <nav role="navigation" className="flex h-full flex-1 items-stretch justify-between">
                     <Link
                         href="/"

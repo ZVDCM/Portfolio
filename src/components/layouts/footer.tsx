@@ -16,44 +16,46 @@ export default function Footer({ children }: React.PropsWithChildren) {
     const { sectionIds } = React.useContext(SectionsContext);
 
     return (
-        <footer className="border-t">
+        <footer>
             <div className="container flex px-0">
-                <div className="flex flex-1 flex-col gap-8 p-8 pr-0">
-                    <Link href="/" className="w-fit font-mono text-3xl font-bold">
-                        ZVM
-                    </Link>
-                    <div className="flex">
-                        <div className="flex flex-1 flex-col items-start gap-8">
-                            <p className="w-[50ch] text-sm">
-                                To shape a future where art and technology merge seamlessly—creating
-                                scalable, cross-platform solutions that are both visually compelling
-                                and crafted with creativity and precision
-                            </p>
-                            <div className="flex items-center gap-4">
-                                <DownloadResume />
-                                <Socials />
+                <div className="flex-1 py-8">
+                    <div className="flex size-full flex-col gap-8 px-8">
+                        <Link href="/" className="w-fit font-mono text-3xl font-bold">
+                            ZVM
+                        </Link>
+                        <div className="flex">
+                            <div className="flex flex-1 flex-col items-start gap-8">
+                                <p className="w-[50ch] text-sm">
+                                    To shape a future where art and technology merge
+                                    seamlessly—creating scalable, cross-platform solutions that are
+                                    both visually compelling and crafted with creativity and
+                                    precision
+                                </p>
+                                <div className="flex items-center gap-4">
+                                    <DownloadResume />
+                                    <Socials />
+                                </div>
+                            </div>
+                            <div className="flex flex-1 justify-center">
+                                <div className="ml-4 flex flex-col gap-2">
+                                    {sectionIds.map((id) => (
+                                        <Link
+                                            key={id}
+                                            href={`#${id}`}
+                                            className="font-mono text-xs font-light underline underline-offset-4"
+                                        >
+                                            {id}
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                        <div className="flex flex-1 justify-center">
-                            <div className="flex flex-col gap-2">
-                                {sectionIds.map((id) => (
-                                    <Link
-                                        key={id}
-                                        href={`#${id}`}
-                                        className="font-mono text-xs font-light underline underline-offset-4"
-                                    >
-                                        {id}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
+                        <ThemeToggle className="mt-auto" />
                     </div>
-
-                    <ThemeToggle className="mt-auto" />
                 </div>
                 <div
                     className={cn(
-                        'bg-background basis-2/5',
+                        'bg-background flex-1',
                         theme === THEME.DARK ? THEME.LIGHT : THEME.DARK,
                     )}
                 >
