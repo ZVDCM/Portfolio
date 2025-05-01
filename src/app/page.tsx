@@ -11,9 +11,6 @@ export default function Home() {
                 <div id="employment" className="flex h-screen w-full items-center justify-center">
                     <h1 className="text-4xl font-bold">Employment</h1>
                 </div>
-                <div id="skills" className="flex h-screen w-full items-center justify-center">
-                    <h1 className="text-4xl font-bold">Skills</h1>
-                </div>
                 <div id="projects" className="flex h-screen w-full items-center justify-center">
                     <h1 className="text-4xl font-bold">Projects</h1>
                 </div>
