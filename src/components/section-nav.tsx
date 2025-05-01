@@ -30,9 +30,9 @@ export default function SectionNav() {
     }, [sectionRefs]);
 
     return (
-        <aside className="sticky bottom-10 z-10 -mt-9 mb-4 w-min px-4 backdrop-blur-md">
+        <aside className="sticky bottom-10 z-10 -mt-9 mb-4 w-min px-4">
             <nav role="navigation">
-                <ToggleGroup type="single">
+                <ToggleGroup type="single" className="backdrop-blur-md">
                     {sectionIds.map((id) => (
                         <ToggleGroupItem key={id} value={id} asChild>
                             <Link

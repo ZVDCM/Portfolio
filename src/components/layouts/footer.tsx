@@ -2,30 +2,14 @@
 
 import Link from 'next/link';
 import React from 'react';
-import { IconType } from 'react-icons';
-import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
+import ProfessionalGoal from '@/components/professional-goal';
 import { SectionsContext } from '@/components/providers/sections-context';
 import { ThemeContext } from '@/components/providers/theme-context-provider';
+import Socials from '@/components/socials';
 import ThemeToggle from '@/components/theme-toggle';
 import { THEME } from '@/config/theme';
 import { cn } from '@/lib/utils/cn';
-
-interface ISocials {
-    icon: IconType;
-    href: string;
-}
-
-const SOCIALS: ISocials[] = [
-    {
-        icon: FaLinkedin,
-        href: '#',
-    },
-    {
-        icon: FaGithub,
-        href: '#',
-    },
-];
 
 export default function Footer({ children }: React.PropsWithChildren) {
     const { theme } = React.useContext(ThemeContext);
@@ -40,23 +24,8 @@ export default function Footer({ children }: React.PropsWithChildren) {
                     </Link>
                     <div className="flex">
                         <div className="flex flex-1 flex-col items-start gap-8">
-                            <p className="w-[50ch] text-sm">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex
-                                exercitationem ut optio illum eos doloremque vitae id minus non
-                                veniam officia modi sequi quam, error earum quas adipisci nulla
-                                unde.
-                            </p>
-                            <div className="flex justify-between gap-4">
-                                {SOCIALS.map((social, index) => {
-                                    const Icon = social.icon;
-
-                                    return (
-                                        <Link key={`social-${index}`} href={social.href}>
-                                            <Icon size="1.2rem" />
-                                        </Link>
-                                    );
-                                })}
-                            </div>
+                            <ProfessionalGoal className="w-[50ch]" />
+                            <Socials />
                         </div>
                         <div className="flex flex-1 justify-center">
                             <div className="flex flex-col gap-2">
