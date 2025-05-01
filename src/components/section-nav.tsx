@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { Button } from '@/components/ui/button';
 
 import { SectionsContext } from './providers/sections-context';
 
@@ -31,20 +31,18 @@ export default function SectionNav() {
 
     return (
         <aside className="sticky bottom-10 z-10 -mt-9 mb-4 w-min px-4">
-            <nav role="navigation">
-                <ToggleGroup type="single" className="backdrop-blur-md">
-                    {sectionIds.map((id) => (
-                        <ToggleGroupItem key={id} value={id} asChild>
-                            <Link
-                                data-state={active === id ? 'on' : 'off'}
-                                href={`#${id}`}
-                                className="min-w-auto px-4 font-mono text-xs font-light"
-                            >
-                                {id}
-                            </Link>
-                        </ToggleGroupItem>
-                    ))}
-                </ToggleGroup>
+            <nav role="navigation" className="bg-muted flex justify-around">
+                {sectionIds.map((id) => (
+                    <Link passHref replace key={id} href={`#${id}`}>
+                        <Button
+                            variant={active === id ? 'default' : 'outline'}
+                            className="data-[variant=outline]:text-muted-foreground rounded-none border-none font-mono text-xs font-light"
+                            size="sm"
+                        >
+                            {id}
+                        </Button>
+                    </Link>
+                ))}
             </nav>
         </aside>
     );
