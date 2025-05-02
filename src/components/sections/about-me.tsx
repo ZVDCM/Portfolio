@@ -15,7 +15,7 @@ export default function AboutMe({ id }: IAboutMeProps) {
     return (
         <>
             <h2 className="sr-only">{id}</h2>
-            <div className="container flex h-screen px-0">
+            <div className="container flex h-screen">
                 <figure className="flex-1">
                     <Image
                         priority

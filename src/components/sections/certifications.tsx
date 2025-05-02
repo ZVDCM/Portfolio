@@ -18,7 +18,7 @@ export default function Certifications({ id }: ICertificationsProps) {
     return (
         <>
             <h2 className="sr-only">{id}</h2>
-            <div className="grid grid-cols-3">
+            <div className="container grid grid-cols-3">
                 <Image src={frontend} alt="Front-end freeCodeCamp certification" />
                 <Image src={backend} alt="Back-end freeCodeCamp certification" />
                 <Image src={cSharp} alt="C# freeCodeCamp certification" />

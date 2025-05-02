@@ -14,7 +14,7 @@ export default function Employment({ id }: IEmploymentProps) {
     return (
         <>
             <h2 className="sr-only">{id}</h2>
-            <div className="container flex h-screen border-b border-dashed px-0">
+            <div className="container flex h-screen border-b border-dashed">
                 <figure className="flex-1">
                     <Image
                         src={fshqParty}
