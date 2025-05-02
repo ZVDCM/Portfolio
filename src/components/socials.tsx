@@ -8,7 +8,7 @@ interface ISocials {
     href: string;
 }
 
-export const SOCIALS: ISocials[] = [
+export const SOCIALS = [
     {
         icon: FaLinkedin,
         href: '#',
@@ -17,7 +17,7 @@ export const SOCIALS: ISocials[] = [
         icon: FaGithub,
         href: '#',
     },
-];
+] as const satisfies ISocials[];
 
 export default function Socials() {
     return (
