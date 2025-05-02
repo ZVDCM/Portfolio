@@ -14,8 +14,8 @@ const eslintConfig = [
         ignores: [
             '**/node_modules/**',
             '**/.next/**',
+            '**/assets/**',
             '**/*.css',
-            '**/*.jpg',
             '**/*.ico',
             '**/*.ttf',
         ],
