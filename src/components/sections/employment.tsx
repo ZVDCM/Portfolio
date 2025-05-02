@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import React from 'react';
 
-import fshqEoty from '@/assets/images/fshq-eoty.jpg';
-import fshqParty from '@/assets/images/fshq-party.jpg';
+import fshqEoty from '@/assets/images/fshq/eoty.jpg';
+import fshqParty from '@/assets/images/fshq/party.jpg';
 
 interface IEmploymentProps {
     id: string;
