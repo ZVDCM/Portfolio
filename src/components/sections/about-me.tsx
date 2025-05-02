@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import me from '@/assets/images/me.jpg';
+import me from '@/assets/images/me.png';
 import DownloadResume from '@/components/download-resume';
 import Socials from '@/components/socials';
 
