@@ -190,7 +190,7 @@ export default function Skills({ id }: ISkillsProps) {
     return (
         <>
             <h2 className="sr-only">{id}</h2>
-            <div className="container grid grid-cols-10 gap-8 p-8">
+            <div className="container grid grid-cols-[repeat(auto-fit,minmax(64px,1fr))] gap-8 p-8">
                 {SKILLS.map((skill, index) => {
                     const Icon = skill.icon;
 
